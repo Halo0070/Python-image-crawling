@@ -28,7 +28,13 @@ def save_image(fullurl,url):
         url = fullurl+url
         print('-<',url)
     a_code = requests.get(url)
-    pathFileName = os.path.join('D:/GitHub/Python image crawling/Python-image-crawling/image',url[-9:-3]+'.png')
+    pathFileName = os.path.join('D:/Crawling Image',url[-9:-3]+'.png')
     urllib.request.urlretrieve(url,pathFileName)
+
+    for _ in range(500):
+        pathFileName.execute_script("window.scrollBy(0,10000)")
+        pathFileName.close()
     
+
+    print('OK!')
 main(1) #max page
