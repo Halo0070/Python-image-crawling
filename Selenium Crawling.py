@@ -1,4 +1,3 @@
-'''
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
 from selenium.webdriver import chrome
@@ -24,6 +23,6 @@ def main(args):
     for _ in range(500):
         browser.execute_script("window.scrollBy(0,10000)")
         browser.close()
-'''
+
 
 
