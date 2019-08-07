@@ -1,5 +1,6 @@
 import requests
 import urllib.request
+import urllib.parse
 import json
 import os
 from bs4 import BeautifulSoup
@@ -28,13 +29,20 @@ def save_image(fullurl,url):
         url = fullurl+url
         print('-<',url)
     a_code = requests.get(url)
-    pathFileName = os.path.join('D:/Crawling Image',url[-9:-3]+'.png')
-    urllib.request.urlretrieve(url,pathFileName)
 
+    pathFileName = os.path.join('D:/Crawling Image',url[-9:-3]+'.png')
+    urllib.request.urlretrieve(url, pathFileName)
+    urllib.request.urlretrieve(url, a_code) #
+    
+    pathFileName.request.urlretrieve(urllib) #
+    
     for _ in range(500):
         pathFileName.execute_script("window.scrollBy(0,10000)")
         pathFileName.close()
-    
+        
+        
 
+    
     print('OK!')
 main(1) #max page
+
