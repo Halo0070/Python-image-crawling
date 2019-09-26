@@ -20,6 +20,11 @@ def main(pages):
             else:
                 save_image(url,href)
         page += 1
+
+        if not duplicate(save_image):
+            urllib.request.urlretrieve(url, "./img/" + save_image)
+        else:
+            print("중복된 이미지!")
  
 def save_image(fullurl,url):
     print(fullurl,"   ",url)
@@ -39,6 +44,10 @@ def save_image(fullurl,url):
     for _ in range(500):
         pathFileName.execute_script("window.scrollBy(0,10000)")
         pathFileName.close()
+
+# 중복 체크
+def duplicate(img):
+    return os.path.exists("./img/" + img)
         
         
 
